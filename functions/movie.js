@@ -1,4 +1,6 @@
 const axios = require('axios')
+const { OMDB_API_KEY } = process.env
+//const OMDB_API_KEY = process.env.OMDB_API_KEY 구조분해
 
 exports.handler = async function( event ){
   console.log(event)
@@ -6,7 +8,6 @@ exports.handler = async function( event ){
   //네트워크에서는 문자형태로 전달되는 변환 필요! JSON.parse()
  
   const { title, type, year, page, id } = payload
-  const OMDB_API_KEY = '7035c60c'
   const url = id
     ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}&plot=full`
     : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
