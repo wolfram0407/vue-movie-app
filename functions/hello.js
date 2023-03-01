@@ -1,6 +1,6 @@
 exports.handler = async function (event, context){
-  return{
-    stausCode : 200,
+  return {
+    statusCode : 200,
     body : JSON.stringify({
       name: 'Wrecker',
       age : 31,
