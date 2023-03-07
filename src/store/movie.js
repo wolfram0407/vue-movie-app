@@ -82,7 +82,7 @@ export default {
         // error.message error=> 네트워크에서 반환받은 객체
         commit('updateState', {
           movies: [],
-          message: error.message
+          message
         })
       } finally {
         commit('updateState', {
